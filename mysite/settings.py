@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-57tk)wgpxsv^32oa+@=07r@hq7qmrnc3kgw#rtfi^#91va@myu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kyeongsupchoi.pythonanywhere.com']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['mysite/home'],
+        'DIRS': ['Leaffit/mysite/home'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
