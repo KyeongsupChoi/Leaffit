@@ -1,0 +1,48 @@
+
+
+              <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+
+                  <li class="breadcrumb-item"><a href="#">Leafdash</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Wendler</li>
+              </ol>
+          <h2 class="h4">Wendler</h2>
+          <form method="POST"  enctype="multipart/form-data">
+              {% csrf_token %}
+              <p>
+              {{ form }}
+              </p>
+              <button class="btn btn-primary" type="submit">Calculate</button>
+          </form>
+
+  <div class="card card-body border-0 shadow table-wrapper table-responsive">
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th class="border-gray-200">Week #</th>
+                  <th class="border-gray-200">Set 1</th>
+                  <th class="border-gray-200">Set 2</th>
+                  <th class="border-gray-200">Set 3</th>
+                  <th class="border-gray-200">Set 4</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for key, value in calculated_dict.items %}
+              <tr>
+                  <td>{{key}}</td>
+                  {% for key1, value1 in value.items %}
+                  <td>{{value1}}</td>
+                  {% endfor %}
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+      <br>
+      <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group ms-2 ms-lg-3">
+              <form action="export/">
+                    <input class="btn btn-sm btn-outline-gray-600" type="submit" value="PDF" />
+              </form>
+          </div>
+      </div>
+  </div>
+
