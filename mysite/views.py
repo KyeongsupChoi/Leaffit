@@ -1,7 +1,4 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
 from django import template
 from django.contrib.auth.decorators import login_required
@@ -9,12 +6,16 @@ from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 from django.shortcuts import render
 from django.template import loader
 from django.urls import reverse
+from docx import settings
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import Table, TableStyle, Paragraph
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.styles import getSampleStyleSheet
+
+from docx import *
+from docx.shared import Inches
 
 from .forms import WendlerForm
 from reportlab.pdfgen import canvas
@@ -79,7 +80,32 @@ def some_view(request):
     # FileResponse sets the Content-Disposition header so that browsers
     # present the option to save the file.
     buffer.seek(0)
-    return FileResponse(buffer, as_attachment=True, filename='hello.pdf')
+    return FileResponse(buffer, as_attachment=True, filename='WendlerSheet.pdf')
+
+def word_doc_view(request):
+
+    document = Document()
+    docx_title="WendlerSheet.docx"
+    # ---- Cover Letter ----
+    document.add_paragraph()
+
+    document.add_paragraph(str(global_wendler_list))
+
+    document.add_page_break()
+
+    # Prepare document for download
+    # -----------------------------
+    f = io.BytesIO()
+    document.save(f)
+    length = f.tell()
+    f.seek(0)
+    response = HttpResponse(
+        f.getvalue(),
+        content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    )
+    response['Content-Disposition'] = 'attachment; filename=' + docx_title
+    response['Content-Length'] = length
+    return response
 
 def wendler_view(request):
     if request.method == 'POST':

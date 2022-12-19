@@ -23,6 +23,8 @@ urlpatterns = [
     path('wendler.html', views.wendler_view, name='wendler'),
 
     path('export/', views.some_view, name='exporty'),
+
+    path('export_doc/', views.word_doc_view, name='exportie'),
     # Matches any html file
 
 ]
