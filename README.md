@@ -1,6 +1,7 @@
 ## ✨ Leaffit
 
 > Generate Wendler Exercise Sheets based on your One Rep Max weights
+> Hosted on https://kyeongsupchoi.pythonanywhere.com/wendler.html
 
 ## ✨ Code-base structure
 
