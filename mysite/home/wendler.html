@@ -15,7 +15,7 @@
                 </ol>
                 <div style="padding-left: 1.5em;">
                     <div class="m-5 pb-5 panel panel-default" style="padding-left: 1.5em;">
-                        <h2 class="h4">Wendler Test this is real</h2>
+                        <h2 class="h4">Input your One Rep Max in Kilograms</h2>
                         <form method="POST"  enctype="multipart/form-data">
                             {% csrf_token %}
                             <p>
@@ -48,15 +48,13 @@
                         </tbody>
                     </table>
                     <br>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group ms-2 ms-lg-3">
-                            <form action="export/">
-                                <input class="btn btn-sm btn-outline-gray-600" type="submit" value="PDF" />
-                            </form>
-                            <form action="export_doc/">
-                                <input class="btn btn-sm btn-outline-gray-600" type="submit" value="Word" />
-                            </form>
-                        </div>
+                    <div>
+                              <form action="export/" style="padding-right: 3em;">
+                                  <input type="submit" value="PDF" class="btn btn-danger pd-5 m-6" style="float: left; margin: 1em;"/>
+                              </form>
+                              <form action="export_doc/" style="border-left: 3em;">
+                                  <input type="submit" value="Word/Docx" class="btn btn-primary pd-5 m-6" style="float: left; margin: 1em;" />
+                              </form>
                     </div>
                 </div>
             </div>
