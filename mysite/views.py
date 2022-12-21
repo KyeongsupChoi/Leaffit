@@ -167,6 +167,8 @@ def wendler_view(request):
                           'Set 4': str(calculated_dict[0.6]) + 'kgx5'},
             }
 
+            print("Woop")
+
             global_wendler_list = exercise_dict
 
             return render(request, 'wendler.html',
