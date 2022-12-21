@@ -1,7 +1,10 @@
 ## ✨ Leaffit
 
-> Generate Wendler Exercise Sheets based on your One Rep Max weights
+> Generate Wendler Exercise Sheets based on your One Rep Max weights  
+> 
 > Hosted on https://kyeongsupchoi.pythonanywhere.com/wendler.html
+> 
+> Wendler Program explanation at https://www.t-nation.com/workouts/5-3-1-how-to-build-pure-strength/
 
 ## ✨ Code-base structure
 
@@ -10,53 +13,25 @@ The project is coded using a simple and intuitive structure presented below:
 ```bash
 < PROJECT ROOT >
    |
-   |-- mysite/                               # Implements app configuration
-   |    |-- settings.py                    # Defines Global Settings
-   |    |-- wsgi.pyd                        # Start the app in production
-   |    |-- urls.py                        # Define URLs served by all apps/nodes
+   |-- mysite/                               # Main app directory
+   |    |
+   |    |-- home/                            # Holds the html template files
+   |    |    |-- wendler.html                # Wendler html file with Django tags and Bootstrap          
+   |    |
+   |    |-- asgi.py                          # ASGI config for mysite project.
+   |    |-- forms.py                         # Define Wendler forms
+   |    |-- models.py                        # Define Wendler models
+   |    |-- settings.py                      # Define Global Settings
+   |    |-- urls.py                          # Define URLs served by all apps/nodes 
+   |    |-- views.py                         # Handles Wendler input and calculations
+   |    |-- wsgi.py                          # Deploys app in production
+   |    |
+   |    |-- venv/                            # Virtual env directory
    |
-   |-- apps/
-   |    |
-   |    |-- home/                          # A simple app that serve HTML files
-   |    |    |-- views.py                  # Serve HTML pages for authenticated users
-   |    |    |-- urls.py                   # Define some super simple routes  
-   |    |
-   |    |-- wendler/                          # A simple app that serve HTML files
-   |    |    |-- views.py                  # Serve HTML pages for authenticated users
-   |    |    |-- urls.py                   # Define some super simple routes 
-   |    |
-   |    |-- authentication/                # Handles auth routes (login and register)
-   |    |    |-- urls.py                   # Define authentication routes  
-   |    |    |-- views.py                  # Handles login and registration  
-   |    |    |-- forms.py                  # Define auth forms (login and register) 
-   |    |
-   |    |-- static/
-   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
-   |    |
-   |    |-- templates/                     # Templates used to render pages
-   |         |-- includes/                 # HTML chunks and components
-   |         |    |-- navigation.html      # Top menu component
-   |         |    |-- sidebar.html         # Sidebar component
-   |         |    |-- footer.html          # App Footer
-   |         |    |-- scripts.html         # Scripts common to all pages
-   |         |
-   |         |-- layouts/                   # Master pages
-   |         |    |-- base-fullscreen.html  # Used by Authentication pages
-   |         |    |-- base.html             # Used by common pages
-   |         |
-   |         |-- accounts/                  # Authentication pages
-   |         |    |-- login.html            # Login page
-   |         |    |-- register.html         # Register page
-   |         |
-   |         |-- home/                      # UI Kit Pages
-   |              |-- index.html            # Index page
-   |              |-- 404-page.html         # 404 page
-   |              |-- *.html                # All other pages
-   |
-   |-- requirements.txt                     # Development modules - SQLite storage
-   |
-   |-- .env                                 # Inject Configuration via Environment
-   |-- manage.py                            # Start the app - Django default start script
+   |-- db.sqlite3                            # SQLite storage
+   |-- README.md                             # Standard readme documentation
+   |-- requirements.txt                      # Development modules
+   |-- manage.py                             # Start the app - Django default start script
    |
    |-- ************************************************************************
 ```
