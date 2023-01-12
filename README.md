@@ -38,15 +38,8 @@ The project is coded using a simple and intuitive structure presented below:
 
 <br />
 
-## Features
+## Libraries Used
 
-> For more components, pages and priority on support, feel free to take a look at this amazing starter:
-
-- 👉 duct page
-  - ✅ `Enhanced UI` - more pages and components
-  - ✅ `Priority` on support
-  - ✅ `OAuth` via Github & Twitter
-  - ✅ `Extended User profile`
-  - ✅ `Improved Authentication`
-  - ✅ `Tasks` Module: create, assign and edit
-  - ✅ `Transaction` Module: full management
+- ✅ `Django` - Basic Web Framework and MVT design pattern
+- ✅ `ReportLab` - Exporting in PDF format
+- ✅ `Docx` Exporting in DOCX format for Word and Google Docs
