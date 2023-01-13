@@ -87,9 +87,16 @@ def word_doc_view(request):
     document = Document()
     docx_title="WendlerSheet.docx"
     # ---- Cover Letter ----
-    document.add_paragraph()
+    document.add_paragraph("Wendler Exercise List")
 
-    document.add_paragraph(str(global_wendler_list))
+    document.add_paragraph('Week 1' + str(global_wendler_list['Week 1'])[1:-1])
+
+    document.add_paragraph('Week 2' + str(global_wendler_list['Week 2'])[1:-1])
+
+    document.add_paragraph('Week 3' + str(global_wendler_list['Week 3'])[1:-1])
+
+    document.add_paragraph('Week 4' + str(global_wendler_list['Week 4'])[1:-1])
+
 
     document.add_page_break()
 
