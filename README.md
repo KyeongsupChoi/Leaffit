@@ -2,7 +2,7 @@
 
 > Generate Wendler Exercise Sheets based on your One Rep Max weights  
 > 
-> Hosted on https://kyeongsupchoi.pythonanywhere.com/wendler.html
+> Visit the live site here https://kyeongsupchoi.pythonanywhere.com/wendler.html
 > 
 > Wendler Program explanation at https://www.t-nation.com/workouts/5-3-1-how-to-build-pure-strength/
 
