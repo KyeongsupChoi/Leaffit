@@ -62,7 +62,7 @@ The project is coded using a simple and intuitive structure presented below:
    |-- mysite/                 # 기본 앱 디렉토리
    |    |
    |    |-- home/              # html 템플릿 파일 저장
-   |    | |-- wendler.html     # 장고 태그와 부트스트랩이 포함된 Wendler html 파일
+   |    |    |-- wendler.html  # 장고 태그와 부트스트랩이 포함된 Wendler html 파일
    |    |
    |    |-- asgi.py            # mysite 프로젝트에 대한 ASGI 구성.
    |    |-- forms.py           # Wendler 양식 정의
